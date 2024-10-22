@@ -1,0 +1,944 @@
+body{
+margin: 0px;
+}
+
+p:hover{
+    cursor: pointer;
+    color: rgb(121, 125, 128);
+}
+
+.navbar1-button{
+    font-size: 70%;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.maindiv-nav{
+    display: flex;
+    height: 2em;
+
+}
+@media (max-width: 1025px) {
+    .nav1 {
+        background-color: lightblue;
+        font-size: 80%;
+    }
+    .navbar2{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+}
+
+
+.nav1{
+    width: 40%;
+    padding-left: 5%;
+    background-color: #eef2f2;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.select{
+    width: 1em;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.nav2{
+    padding-top: 0.7em;
+    padding-right: 3%;
+    width: 60%;
+    background-color: #eef2f2;
+    text-align: right;
+
+}
+
+
+input:hover{
+    cursor: pointer;
+}
+
+i:hover{
+    cursor: pointer;
+    color: rgb(121, 125, 128);
+}
+
+.search{
+    width: 3.2em;
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+}
+
+.icon{
+    width: 2em;
+    height: 2em;
+    font-size: 1em;
+}
+
+.head-img{
+    text-align: center ;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.logo{
+    width: 42PX;
+}
+
+#navbar2{
+    padding-left: 16%;
+    padding-right:16%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+
+@media (max-width:769px){
+    .navbar2{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+#navbar2-btn{
+    position: relative;
+    margin: 0;
+    font-size: 90%;
+    line-height: 2em;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(0,0,0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#dropdown1{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1660%;
+    height: 450px;
+    margin-top: 0;
+    margin-left:-270px;   
+}
+
+#item{
+    color: red;
+    font-size: 1.2em;
+}
+
+#item-head{
+    text-underline-offset: 1px;
+    font-size: 1.2em;
+    color:rgb(100, 99, 99);
+    text-decoration: underline;
+    text-decoration: underline 1px;
+}
+#item-head:hover{
+    color: black;
+}
+
+#items{
+    color: rgb(100, 99, 99);
+    font-size: 1.1em;
+}
+
+#items:hover{
+    color: black;
+}
+
+#dropdown-sec-1{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+}
+
+#dropdown2{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1720%;
+    height: 310px;
+    margin-top: 0;
+    margin-left:-420px;   
+}
+#dropdown-sec-2{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+    padding-left: 10%;
+}
+
+#img-dropdown2{
+    margin-left: 50%;
+}
+
+#dropdown3{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1540px;
+    height: 425px;
+    margin-top: 0;
+    margin-left:-590px;   
+}
+#dropdown-sec-3{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+    padding-left: 5%;
+}
+
+#dropdown4{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1540px;
+    height: 425px;
+    margin-top: 0;
+    margin-left:-700px;   
+}
+#dropdown-sec-4{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+    padding-left: 5%;
+}
+#dropdown5{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1540px;
+    height: 325px;
+    margin-top: 0;
+    margin-left:-765px; 
+    padding-left: 150px; 
+}
+#dropdown-sec-5{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+    padding-left: 0%;
+}
+#dropdown6{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1540px;
+    height: 425px;
+    margin-top: 0;
+    margin-left:-915px; 
+    padding-left: 150px; 
+}
+#dropdown-sec-6{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+    padding-left: 0%;
+}
+
+#dropdown7{
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    width: 1540px;
+    height: 425px;
+    margin-top: 0;
+    margin-left:-1055px; 
+    padding-left: 190px; 
+}
+#dropdown-sec-7{
+    width: 20%;
+    list-style-type: none;
+    float: left;
+    padding-left: 0%;
+}
+#img-dropdown7{
+    width: 70%;
+}
+
+#navbar2-btn:hover #dropdown7{
+    display: block;
+}
+
+#navbar2-btn:hover #dropdown6{
+    display: block;
+}
+
+#navbar2-btn:hover #dropdown5{
+    display: block;
+}
+
+#navbar2-btn:hover #dropdown4{
+    display: block;
+}
+
+#navbar2-btn:hover #dropdown3{
+    display: block;
+}
+
+#navbar2-btn:hover #dropdown2{
+    display: block;
+}
+
+#navbar2-btn:hover #dropdown1{
+    display: block;
+}
+
+#stick{
+    position: sticky;
+    top: 0% ;
+    z-index: 5000;
+}
+
+
+
+#navbar2-btn:hover{
+    cursor: pointer;
+}
+
+.p{
+    line-height: 1%;
+}
+
+#backgroundCarousel {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.banner-div{
+   padding-left: 1em;
+   padding-right: 1em;
+}
+
+.banner-img{
+    width: 100%;
+}
+
+
+
+/* images Section1 */
+#main{
+    width: 100%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#img1-div{
+    width: 38%;
+    margin-left: 18%;
+    
+}
+
+#img1{
+    width: 100%;
+    height: 92%;
+    float: left;
+}
+
+#img2-div{
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 2.4em; */
+    margin-right: 18%;
+
+
+}
+
+
+#imgtxt{
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#shop{
+    line-height: 1px;
+    font-weight: 600;
+    font-size: 1.2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* images Section2 */
+#main-div2{
+    width: 100%;
+    margin-top: 7%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#img-div3{
+    width: 18%;
+    float: left;
+    margin-left: 18%;
+    
+}
+
+#img-div4{
+    width: 38%;
+}
+
+#img4{
+    width: 100%;
+}
+
+#img6{
+    width: 100%;
+    height: 93%;
+}
+
+#img-div4{
+    margin-right: 18%;
+}
+
+
+/* Card Section1 */
+#card1-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+#card1-div{
+    width: 70%;
+    background-color:rgb(255,248,238);
+    margin-right: 5%;
+    padding-top: 5%;
+    padding-left: 7%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    /* position: relative; */
+}
+
+#card1{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+#shop-card{
+    position: absolute;
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    right: 18%;
+    bottom: 27%;
+}
+
+
+/* Card Section2 */
+.add{
+    margin-top: 7%;
+    margin-bottom: 10%;
+}
+
+
+/* Images Section3 */
+#txt-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+
+}
+
+#NA{
+    color: rgb(48,48, 48);
+    text-align: center;
+    text-decoration: underline;
+    font-size: 22px;
+    line-height: 3em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#BandG{
+    color: rgb(48,48, 48);
+    text-align: center;
+    font-size: 64px;
+    margin-top: 0;
+    margin-bottom: 1%;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#maindiv-imgsec3{
+    /* width: 100%; */
+    display: flex;
+    /* justify-content: space-evenly; */
+    margin-left: 2%;
+}
+
+#imgsec3-div1{
+    
+    float: left;
+    margin-left: 9%;
+    margin-right: 8%;
+    position: relative;
+
+}
+
+#img7{
+    width: 120%;
+    position: relative;
+    transition: opacity 0.3s ease;
+
+}
+
+#img7:hover{
+    opacity: 0.3;
+}
+
+#imgsec3-div2{
+    
+    display: flex;
+    gap: 3%;
+    margin-right: 5%;
+    clear: right;
+    position: relative;
+}
+
+#img8,#img9,#img10{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+#img8-div{
+    width: 24%;
+}
+#img9-div{
+    width: 24%;
+}
+#img10-div{
+    width: 24%;
+}
+
+#img8:hover{
+    opacity: 0.3;
+}
+
+#img9:hover{
+    opacity: 0.3;
+}
+
+#img10:hover{
+    opacity: 0.3;
+}
+
+#imgsec3-div3{
+    height: 235px;
+    text-align: center;
+    margin-right: 25%;
+    padding-top: 7%;
+}
+
+#txt-div2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+#txt-div2:hover{
+    color: black;
+    cursor: auto;
+}
+
+#txt-div3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+#txt-div3:hover{
+    color: black;
+    cursor: auto;
+}
+
+#imgsec3-shop{
+    line-height: 1px;
+    font-weight: 600;
+    /* pointer-events: none; */
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+#imgsec3-txt{
+    line-height: 1px;
+    font-weight: 600;
+    font-size: 1.5em;
+    /* pointer-events: none; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#imgsec3-divtxt1{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 46%;
+    z-index: 1000;
+    top: 35%;
+}
+
+#imgsec3-divtxt2{
+
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 6%;
+    z-index: 1000;
+    top: 33%;
+}
+
+#imgsec3-divtxt3{
+
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 33%;
+    z-index: 1000;
+    top: 33%;
+}
+
+#imgsec3-divtxt4{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 60%;
+    z-index: 1000;
+    top: 33%;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#imgsec3-div1:hover #imgsec3-divtxt1{
+    opacity: 1;
+    visibility: visible;
+}
+
+#img8-div:hover #imgsec3-divtxt2 {
+    opacity: 1;
+    visibility: visible;
+}
+
+#img9-div:hover #imgsec3-divtxt3 {
+    opacity: 1;
+    visibility: visible;
+}
+
+#img10-div:hover #imgsec3-divtxt4 {
+    opacity: 1;
+    visibility: visible;
+}
+
+#img10-div:hover #img10,
+#img9-div:hover #img9,
+#img8-div:hover #img8,
+#imgsec3-div1:hover #img7
+{
+    opacity: 0.3;
+}
+
+
+/* Form */
+.main-form{
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+#form{
+    width: 77%;
+    background-color:rgb(35,35,35);
+    padding-bottom: 3%;
+}
+
+#form-txt1{
+    margin-top: 3%;
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#form-txt1,#form-txt2:hover{
+    cursor: default;
+}
+
+#form-txt2{
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#input-div{
+    display: flex;
+    justify-content: center;
+}
+
+#input{
+    font-size: 0.8em;
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
+    padding-left: 1%;
+    width: 17%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#input:hover{
+    cursor:text;
+}
+
+#form-btn{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 1%;
+    font-weight: 600;
+    width: 8%;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+#form-btn:hover{
+    cursor: pointer;
+}
+
+/* Footer */
+#ftr-main-div{
+    display: flex;
+    margin-left: 13%;
+    margin-top: 2%;
+}
+
+#ftr-div1{
+    width: 30%;
+}
+
+#ftr-txt1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(48,48,48);
+    padding-bottom: 9%;
+
+}
+
+#ftr-txt12{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(48,48,48);
+    font-size: 14px;
+    line-height: 2em;
+
+}
+
+#ftr-txt2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(48,48,48);
+    font-size: 14px;
+    line-height: 10px;
+}
+
+#img-ftr3{
+    width: 40%;
+}
+
+#img-ftr3:hover{
+    cursor: pointer;
+}
+
+#ftr-div2{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+}
+#ftr-div3{
+    width: 20%;
+
+}
+#ftr-div4{
+    width: 20%;
+}
+
+
+
+
+/* Ensure font-awesome or another icon library is included */
+
+.social-icons {
+    /* padding: 20px; */
+}
+
+#fb-icon{
+    font-size: 1.5em;
+    
+}
+
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 90%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .7}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .first{
+     -webkit-animation: bannermove 1s linear infinite;
+     -moz-animation: bannermove 1s linear infinite;
+     -ms-animation: bannermove 1s linear infinite;
+     -o-animation: bannermove 1s linear infinite;
+     animation: bannermove 1s linear infinite;
+}
+@keyframes bannermove {
+    0% {
+       margin-left: 0px;
+    }
+    100% {
+       margin-left: -2125px;
+    }
+    
+   }
+    
+   @-moz-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   }
+    
+   @-webkit-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   }
+    
+   @-ms-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   }
+    
+   @-o-keyframes bannermove {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -2125px;
+    }
+    
+   } */

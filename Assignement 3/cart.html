@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <form>
+            <!-- Add Notes -->
+            <div class="mb-3">
+                <label for="notes" class="form-label">Add notes</label>
+                <textarea class="form-control" id="notes" rows="2" placeholder="Add notes"></textarea>
+            </div>
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label for="fullName" class="form-label">ENTER YOUR NAME</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Full Name">
+                <div class="form-text text-danger errormessage text-danger" id="fullNameerror" style="display: none;">* Please Enter Name</div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">ENTER YOUR PHONE NUMBER</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="countryCode">+92</span>
+                    <input type="tel" class="form-control " id="phone" placeholder="Phone Number" aria-describedby="countryCode">
+                    <div class="form-text text-danger errormessage text-danger w-100" id="phoneerror" style="display: none;">* Please Enter Phone No</div>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="mb-3">
+                <label for="city" class="form-label">SELECT YOUR CITY</label>
+                <select class="form-select" id="city" aria-label="Select City">
+                    <option selected>Sahiwal</option>
+                    <option value="1">Faisalabad</option>
+                    <option value="2">Lahore</option>
+                    <option value="3">Karachi</option>
+                </select>
+            </div>
+
+            <!-- Checkout Button -->
+            <button type="submit" class="btn btn-danger w-100">
+                CHECKOUT
+            </button>
+        </form>
+    </div>
+    
+    <!-- Bootstrap JS -->
+     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
