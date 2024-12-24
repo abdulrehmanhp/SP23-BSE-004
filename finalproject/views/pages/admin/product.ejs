@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="card">
+        <div class="header-section">
+            <h2 class="header-title">Product Management</h2>
+            <a href="/admin/products/create" class="btn btn-create">
+                <i class="fas fa-plus-circle me-2"></i>Create New Product
+            </a>
+        </div>
+
+        <div class="sort-container">
+            <form style="display: flex; justify-content: space-between;" method="GET" action="/admin/products">
+                <div><label for="sort" class="sort-label">Sort by:</label>
+                <select name="sort" id="sort" onchange="this.form.submit()" class="sort-select">
+                    <option value="default" <%= sortBy === 'default' ? 'selected' : '' %>>Default</option>
+                    <option value="price" <%= sortBy === 'price' ? 'selected' : '' %>>Price</option>
+                    <option value="quantity" <%= sortBy === 'quantity' ? 'selected' : '' %>>Quantity</option>
+                </select>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search by Product ID" />
+                    <button id="searchButton">Search</button>
+                </div>
+                <div>
+                <label for="filter" class="filter-label">Filter by:</label>
+                <select name="filter" id="filter" onchange="this.form.submit()">
+                    <option value="all" <% if (filter === 'all') { %> selected <% } %>>All Products</option>
+                    <option value="Featured" <% if (filter === 'Featured') { %> selected <% } %>>Featured Products</option>
+                    <option value="Standard" <% if (filter === 'Standard') { %> selected <% } %>>Standard Products</option>
+                </select>
+                </div>
+            </form>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-hashtag me-2"></i>ID</th>
+                    <th><i class="fas fa-info-circle me-2"></i>Description</th>
+                    <th><i class="fas fa-tag me-2"></i>Price</th>
+                    <th><i class="fas fa-tag me-2"></i>Quantity</th>
+                    <th><i class="fas fa-star me-2"></i>Featured</th>
+                    <th><i class="fas fa-star me-2"></i>Category</th>
+                    <th><i class="fas fa-star me-2"></i>Image</th>
+                    <th><i class="fas fa-cogs me-2"></i>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < products.length; i++) { %>
+                    <tr>
+                        <td><%= products[i].ID %></td>
+                        <td><%= products[i].Description %></td>
+                        <td><%= products[i].Price %></td>
+                        <td><%= products[i].quantity %></td>
+                        <td><%= products[i].Featured ? 'Yes' : 'No' %></td>
+                        <td><%= products[i].category ? products[i].category.category : 'N/A' %></td>
+                        <td><img src="/<%= products[i].picture %>" width="80px"></td>
+                        <td>
+                            <a href="/admin/product/edit/<%= products[i]._id %>" class="btn btn-warning">Edit</a>
+                            <a href="/admin/product/delete/<%= products[i]._id %>" class="btn btn-danger">Del</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+      <!-- Pagination Section -->
+    <div class="pagination">
+      <% if (currentPage > 1) { %>
+        <a href="/admin/products?page=<%= currentPage - 1 %>&limit=3" class="btn btn-secondary">Previous</a>
+      <% } %>
+
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/admin/products?page=<%= i %>&limit=3" 
+           class="btn <%= currentPage === i ? 'btn-primary' : 'btn-secondary' %>">
+          <%= i %>
+        </a>
+      <% } %>
+
+      <% if (currentPage < totalPages) { %>
+        <a href="/admin/products?page=<%= currentPage + 1 %>&limit=3" class="btn btn-secondary">Next</a>
+      <% } %>
+    </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        const searchId = document.getElementById('searchInput').value;
+        filterProductsById(searchId);
+    });
+    
+    function filterProductsById(searchId) {
+        fetch('/api/products')
+            .then(response => response.json())
+            .then(products => {
+                const filteredProducts = products.filter(product => product.ID === parseInt(searchId));
+                displayProducts(filteredProducts);
+            })
+            .catch(error => console.error('Error fetching products:', error));
+    }
+    
+    function displayProducts(products) {
+        const productsContainer = document.getElementById('productsContainer');
+        productsContainer.innerHTML = '';
+    
+        if (products.length === 0) {
+            productsContainer.innerHTML = '<p>No products found.</p>';
+            return;
+        }
+    
+        products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.innerHTML = `
+                <h3>${product.Description}</h3>
+                <p>Price: $${product.Price}</p>
+                <p>ID: ${product.ID}</p>
+            `;
+            productsContainer.appendChild(productElement);
+        });
+    }
+    </script>

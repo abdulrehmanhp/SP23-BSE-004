@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="/css/J.css">
+    <style>
+        .confirmation-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .success-message {
+            text-align: center;
+            color: #2ecc71;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .success-message i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .order-number, .order-date {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .order-details {
+            margin-top: 30px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .product-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .info-box, .total-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .status-processing {
+            color: #f39c12;
+        }
+
+        .status-completed {
+            color: #2ecc71;
+        }
+
+        .action-buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #e67e22;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for your purchase</p>
+            <p class="order-number">Order #: <%= order._id %></p>
+            <p class="order-date">Placed on <%= orderDate %> at <%= orderTime %></p>
+        </div>
+
+        <div class="order-details">
+            <h2>Order Summary</h2>
+            
+            <div class="products-list">
+                <h3>Items Ordered</h3>
+                <% order.products.forEach(item => { %>
+                    <div class="product-item">
+                        <img src="/<%= item.product.picture %>" alt="<%= item.product.Description %>">
+                        <div class="product-info">
+                            <h4><%= item.product.Description %></h4>
+                            <p>Quantity: <%= item.quantity %></p>
+                            <p>Price: $<%= item.price.toFixed(2) %></p>
+                            <p class="subtotal">Subtotal: $<%= (item.price * item.quantity).toFixed(2) %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+
+            <div class="shipping-info">
+                <h3>Shipping Information</h3>
+                <div class="info-box">
+                    <p><strong>Name:</strong> <%= order.shippingInfo.name %></p>
+                    <p><strong>Address:</strong> <%= order.shippingInfo.address %></p>
+                    <p><strong>City:</strong> <%= order.shippingInfo.city %></p>
+                    <p><strong>Country:</strong> <%= order.shippingInfo.country %></p>
+                    <p><strong>Postal Code:</strong> <%= order.shippingInfo.postal %></p>
+                </div>
+            </div>
+
+            <div class="payment-info">
+                <h3>Payment Details</h3>
+                <div class="info-box">
+                    <p><strong>Payment Method:</strong> 
+                        <%= order.paymentInfo.method === 'credit_card' ? 'Credit Card' : 'Cash on Delivery' %>
+                    </p>
+                    <% if (order.paymentInfo.cardLastFour) { %>
+                        <p><strong>Card:</strong> **** **** **** <%= order.paymentInfo.cardLastFour %></p>
+                    <% } %>
+                    <p><strong>Status:</strong> <span class="status-<%= order.status.toLowerCase() %>">
+                        <%= order.status %>
+                    </span></p>
+                </div>
+            </div>
+
+            <div class="order-total">
+                <h3>Order Total</h3>
+                <div class="total-box">
+                    <p><strong>Total Amount:</strong> $<%= order.totalAmount.toFixed(2) %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="/" class="home-button">Continue Shopping</a>
+        </div>
+    </div>
+</body>
+</html> 
