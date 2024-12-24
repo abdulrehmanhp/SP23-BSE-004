@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --accent-color: #4895ef;
+      --success-color: #4cc9f0;
+      --warning-color: #f72585;
+      --light-bg: #f8f9fa;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    .navbar {
+      background: rgb(44,62,80);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .header-title {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .btn-create {
+      background: linear-gradient(45deg, var(--accent-color), var(--success-color));
+      border: none;
+      padding: 0.8rem 1.5rem;
+      color: white;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: transform 0.2s;
+    }
+
+    .btn-create:hover {
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .table {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.02);
+    }
+
+    .table thead th {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      font-weight: 500;
+      border: none;
+      padding: 1rem;
+    }
+
+    .table tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .table tbody td {
+      padding: 1rem;
+      vertical-align: middle;
+    }
+
+    .badge-featured {
+      background: var(--success-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .badge-not-featured {
+      background: #e9ecef;
+      color: #495057;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .btn-action {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-edit {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      margin-right: 0.5rem;
+    }
+
+    .btn-delete {
+      background-color: var(--warning-color);
+      color: white;
+      border: none;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      color: rgb(219, 29, 29);
+    }
+
+    .price-column {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Animation for table rows */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .table tbody tr {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <nav style="height: 80px;" class="navbar navbar-expand-lg">
+    <div style="display: flex;justify-content: space-around;" class="container">
+      <a class="navbar-brand" href="/admin">Dashboard</a>
+      <a class="navbar-brand" href="/">Main Site</a>
+    </div>
+  </nav>
+  <%- body %>
+</body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+    function displayProducts(products) {
+  const productList = document.getElementById("product-list");
+
+  products.forEach((product) => {
+    const productHTML = `
+      <div class="product-card">
+        <h3>${product.Description}</h3>
+        <p>Price: $${product.Price}</p>
+        <p>Featured: ${product.Featured ? "Yes" : "No"}</p>
+      </div>
+    `;
+    productList.innerHTML += productHTML;
+  });
+}
+
+  </script>
+</body>
+</html>

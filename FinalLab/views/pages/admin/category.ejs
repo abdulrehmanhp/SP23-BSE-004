@@ -1,0 +1,23 @@
+<h3>Category</h3>
+<a href="/admin/categories/createCategory" class="btn btn-info">Create Category &#10010;</a>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>_id</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0; i < category.length ; i++ ){%>
+            <tr>
+                <td><%= category[i]._id %></td>
+                <td><%= category[i].category %></td>
+                <td>
+                    <a href="/admin/categories/edit/<%= category[i]._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/admin/categories/delete/<%= category[i]._id %>" class="btn btn-danger">Del</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<!-- views/pages/wishlist.ejs -->
+
+<div class="container">
+    <h1>Your Wishlist</h1>
+    <% if (products.length > 0) { %>
+        <ul class="wishlist-items">
+            <% products.forEach(product => { %>
+                <li class="wishlist-item">
+                    <div class="product-info">
+                        <h3><%= product.Description %></h3>
+                        <p>Price: $<%= product.Price.toFixed(2) %></p>
+                        <img src="/uploads/<%= product.picture %>" alt="<%= product.Description %>" class="product-image">
+                    </div>
+                    <button class="remove-from-wishlist" data-product-id="<%= product._id %>">Remove</button>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Your wishlist is empty.</p>
+    <% } %>
+</div>
+
+
+<script src="/public/js/wishlist.js"></script>

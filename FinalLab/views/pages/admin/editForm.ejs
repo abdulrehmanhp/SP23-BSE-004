@@ -1,0 +1,35 @@
+<h4>Edit Product</h4>
+
+<form class="container" method="post">
+    <div class="form-group">
+        <label for="">ID</label>
+        <input name="ID" type="text" class="form-control" value="<%= product.ID %>"/>
+    </div>
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea name="Description" type="text" class="form-control"><%= product.Description %></textarea>
+    </div>
+    <div class="form-group">
+        <label for="">Price </label>
+        <input name="Price" type="text" class="form-control" value="<%= product.Price %>"/>
+    </div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" min="0" value="<%= product.quantity %>" required>
+    <div class="form-group my-3">
+        <label for="">Featured?  
+        <input name="Featured" type="checkbox" class="form-check-input" <% if (product.Featured) { %>
+         checked="checked"
+        <% } %> />
+    </label>
+    </div>
+    <label for="category">Category:</label>
+    <select name="category" id="category">
+        <% categories.forEach(category => { %>
+            <option value="<%= category._id %>" <%= category._id.equals(product.category) ? 'selected' : '' %>><%= category.category %></option>
+        <% }) %>
+    </select>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Edit Record</button>
+    </div>
+
+</form>
